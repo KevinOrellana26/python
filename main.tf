@@ -78,11 +78,11 @@ resource "kubernetes_manifest" "python_service" {
 
 //////////////////////// Ingress
 locals {
-  ingress_host = kubernetes_manifest.python_ingress.spec.rule.host
+  ingress_host = kubernetes_manifest.python_ingress.spec[0].rule[0].host
 }
 
 output "ingress_host" {
-  value = "https://local.ingress_host"
+  value = "https://${local.ingress_host}"
 }
 
 
