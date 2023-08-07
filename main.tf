@@ -78,13 +78,13 @@ resource "kubernetes_manifest" "python_service" {
 
 //////////////////////// Ingress
 resource "kubernetes_manifest" "python_ingress" {
-    depends_on = [
-        kubernetes_namespace.default,
-    ]
-    manifest = yamldecode(templatefile(
-        "${path.module}/manifests/python-ingress.tpl.yaml",
-        {
-            "namespace" = var.namespace
-        }
-    ))
+  depends_on = [
+    kubernetes_namespace.default,
+  ]
+  manifest = yamldecode(templatefile(
+    "${path.module}/manifests/python-ingress.tpl.yaml",
+    {
+      "namespace" = var.namespace
+    }
+  ))
 }
