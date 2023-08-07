@@ -4,11 +4,12 @@ metadata:
   name: python-ingress
   namespace: ${namespace}
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "syndeno-issuer"
     kubernetes.io/ingress.allow-http: "false"
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
   - host: "python.plt.ko.syndeno.net"
     http:
