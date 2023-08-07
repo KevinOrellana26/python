@@ -3,10 +3,6 @@ variable "namespace" {
   type    = string
 }
 
-output "url" {
-  value = "https://${kubernetes_manifest.python_ingress.spec[0].rule[0].host}"
-}
-
 //////////////////////// Provider
 terraform {
   required_providers {
@@ -81,6 +77,15 @@ resource "kubernetes_manifest" "python_service" {
 }
 
 //////////////////////// Ingress
+locals {
+  ingress_host = kubernetes_manifest.python_ingress.metadata[0].rule[0].host
+}
+
+output "ingress_host" {
+  value = local.ingress_host
+}
+
+
 resource "kubernetes_manifest" "python_ingress" {
   depends_on = [
     kubernetes_namespace.default,
