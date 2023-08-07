@@ -27,5 +27,5 @@ spec:
         #       number: 5000
         # path: /
   tls:
-    hosts: ["python.plt.ko.syndeno.net"]
+  - host: ["python.plt.ko.syndeno.net"]
     secret_name: "python.plt.ko.syndeno.net"
