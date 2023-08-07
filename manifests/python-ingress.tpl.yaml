@@ -20,12 +20,6 @@ spec:
             name: python
             port:
               number: 5000
-        # backend:
-        #   service:
-        #     name: python
-        #     port:
-        #       number: 5000
-        # path: /
   tls:
   - host: ["python.plt.ko.syndeno.net"]
     secret_name: "python.plt.ko.syndeno.net"
