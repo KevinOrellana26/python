@@ -20,7 +20,7 @@ pipeline {
         )
 
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generation plan')
-        string(name: 'SECRET_NAME', defaultValue: params.SECRET_NAME ?: 'keyvin-key-sa', description: 'AWS Secret')
+        string(name: 'SECRET_NAME', defaultValue: params.SECRET_NAME ?: 'kevin-key-sa', description: 'AWS Secret')
 
         string(name: 'AWS_REGION', defaultValue: params.AWS_REGION ?: 'eu-central-1', description: 'AWS Region')
         string(name: 'NODE_NAMESPACE', defaultValue: params.NODE_NAMESPACE ?: 'python', description: 'Namespace for Python')
