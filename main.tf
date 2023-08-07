@@ -4,7 +4,7 @@ variable "namespace" {
 }
 
 output "url" {
-  value = "${kubernetes_manifest.python_ingress.spec[0].rule[0].host}"
+  value = "https://${kubernetes_manifest.python_ingress.spec[0].rule[0].host}"
 }
 
 //////////////////////// Provider
