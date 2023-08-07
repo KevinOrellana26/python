@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python
+  namespace: ${namespace}
+  labels:
+    app: python
+spec:
+  selector:
+    app: angular
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: NodePort
