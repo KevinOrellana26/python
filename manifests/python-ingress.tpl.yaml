@@ -21,6 +21,6 @@ spec:
             name: python
             port:
               number: 5000
-  tls:
-  - host: ["python.plt.ko.syndeno.net"]
-    secret_name: "python.plt.ko.syndeno.net"
+  # tls:
+  # - host: ["python.plt.ko.syndeno.net"]
+  #   secret_name: "python.plt.ko.syndeno.net"
