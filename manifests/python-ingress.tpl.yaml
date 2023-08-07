@@ -9,8 +9,8 @@ metadata:
     kubernetes.io/ingress.allow-http: "false"
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
-  rule:
-    host: "python.plt.ko.syndeno.net"
+  rules:
+  - host: "python.plt.ko.syndeno.net"
     http:
       paths:
       - path: /
@@ -26,6 +26,6 @@ spec:
         #     port:
         #       number: 5000
         # path: /
-  tls:
-    host: ["python.plt.ko.syndeno.net"]
-    secret_name: "python.plt.ko.syndeno.net"
+  # tls:
+  #   host: ["python.plt.ko.syndeno.net"]
+  #   secret_name: "python.plt.ko.syndeno.net"
