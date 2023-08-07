@@ -15,7 +15,7 @@ pipeline {
                 'main_refresh',
                 'main_destroy',
             ],
-            description: "Node Pipeline action to apply",
+            description: "Python Pipeline action to apply",
             name: 'action'
         )
 
