@@ -12,13 +12,20 @@ spec:
   rule:
     host: "python.plt.ko.syndeno.net"
     http:
-      path:
+      paths:
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: python
             port:
               number: 5000
-        path: /
+        # backend:
+        #   service:
+        #     name: python
+        #     port:
+        #       number: 5000
+        # path: /
   tls:
     host: ["python.plt.ko.syndeno.net"]
     secret_name: "python.plt.ko.syndeno.net"
