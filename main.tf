@@ -3,6 +3,10 @@ variable "namespace" {
   type    = string
 }
 
+output "url" {
+  value = "${kubernetes_manifest.python_ingress.spec.rules.hosts}"
+}
+
 //////////////////////// Provider
 terraform {
   required_providers {
