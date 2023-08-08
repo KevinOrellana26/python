@@ -7,7 +7,7 @@ metadata:
     app: python
 spec:
   selector:
-    app: angular
+    app: python
   ports:
     - protocol: TCP
       port: 5000
