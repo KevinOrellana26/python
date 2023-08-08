@@ -1,5 +1,5 @@
 variable "namespace" {
-  default = "python"
+  default = "aplicaciones-comunes"
   type    = string
 }
 
@@ -20,18 +20,18 @@ provider "aws" {
 }
 
 //////////////////////// Namespace
-resource "kubernetes_namespace" "default" {
-  metadata {
-    name = var.namespace
-  }
-}
+# resource "kubernetes_namespace" "default" {
+#   metadata {
+#     name = var.namespace
+#   }
+# }
 
 //////////////////////// Deployment
 
 resource "kubernetes_deployment" "python_deploy" {
-  depends_on = [
-    kubernetes_namespace.default
-  ]
+  # depends_on = [
+  #   kubernetes_namespace.default
+  # ]
   metadata {
     name      = "python"
     namespace = var.namespace
@@ -65,9 +65,9 @@ resource "kubernetes_deployment" "python_deploy" {
 
 //////////////////////// Service
 resource "kubernetes_manifest" "python_service" {
-  depends_on = [
-    kubernetes_namespace.default,
-  ]
+  # depends_on = [
+  #   kubernetes_namespace.default,
+  # ]
   manifest = yamldecode(templatefile(
     "${path.module}/manifests/python-service.tpl.yaml",
     {
@@ -87,9 +87,9 @@ resource "kubernetes_manifest" "python_service" {
 
 
 resource "kubernetes_manifest" "python_ingress" {
-  depends_on = [
-    kubernetes_namespace.default,
-  ]
+  # depends_on = [
+  #   kubernetes_namespace.default,
+  # ]
   manifest = yamldecode(templatefile(
     "${path.module}/manifests/python-ingress.tpl.yaml",
     {
